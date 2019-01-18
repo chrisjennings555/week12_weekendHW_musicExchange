@@ -1,4 +1,4 @@
 public interface ISell {
 
-    public void calculateMarkup();
+    public int calculateMarkup();
 }

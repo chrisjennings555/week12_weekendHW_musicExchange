@@ -46,7 +46,7 @@ public class Instrument implements IPlay, ISell{
     }
 
     @Override
-    public void calculateMarkup() {
-
+    public int calculateMarkup() {
+        return sellPrice - costPrice;
     }
 }

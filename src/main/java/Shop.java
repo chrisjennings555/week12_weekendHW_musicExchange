@@ -5,7 +5,7 @@ public class Shop {
     ArrayList stock;
 
     public Shop(ArrayList<ISell> stock){
-        this.stock = new ArrayList();
+        this.stock = new ArrayList<ISell>();
     }
 
     public int getStockCount() {
@@ -26,9 +26,16 @@ public class Shop {
     }
 
     public int calculateMarkupOfItem(ISell item){
-        Instrument pricedItem = (Instrument) item;
-        int markUp = pricedItem.sellPrice - pricedItem.costPrice;
-        return markUp;
+        return item.calculateMarkup();
+    }
+
+    public int calculateTotalProfit(){
+        int totalProfit = 0;
+        for(Object item : this.stock) {
+            ISell checkedItem = (ISell) item;
+            totalProfit += checkedItem.calculateMarkup();
+        }
+        return totalProfit;
     }
 
 

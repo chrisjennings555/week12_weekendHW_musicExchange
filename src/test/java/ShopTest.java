@@ -47,4 +47,12 @@ public class ShopTest {
     public void canCalculateMarkUp(){
         assertEquals(10, shop.calculateMarkupOfItem(guitar));
     }
+
+    @Test
+    public void canCalculateTotalProfit(){
+        shop.addItemToStock(guitar);
+        shop.addItemToStock(guitar);
+        shop.addItemToStock(guitar);
+        assertEquals(30, shop.calculateTotalProfit());
+    }
 }
