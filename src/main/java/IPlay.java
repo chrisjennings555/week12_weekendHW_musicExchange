@@ -1,4 +1,4 @@
 public interface IPlay {
 
-    public String playMusic(Instrument instrument);
+    public String playMusic();
 }

@@ -9,7 +9,7 @@ public class InstrumentTest {
 
     @Before
     public void before() {
-        instrument = new Instrument("Wood", "Black", FamilyType.STRING, InstrumentType.GUITAR);
+        instrument = new Instrument("Wood", "Black", FamilyType.STRING, InstrumentType.GUITAR, 10, 20);
     }
 
     @Test
@@ -29,6 +29,21 @@ public class InstrumentTest {
 
     @Test
     public void getInstrument() {
-        assertEquals(InstrumentType.GUITAR, instrument.getInstrument());
+        assertEquals(InstrumentType.GUITAR, instrument.getInstrumentType());
+    }
+
+    @Test
+    public void hasCostPrice(){
+        assertEquals(10, instrument.getCostPrice());
+    }
+
+    @Test
+    public void hasSellPrice(){
+        assertEquals(20, instrument.getSellPrice());
+    }
+
+    @Test
+    public void playInstrument(){
+        assertEquals("I am playing the Guitar!", instrument.playMusic());
     }
 }

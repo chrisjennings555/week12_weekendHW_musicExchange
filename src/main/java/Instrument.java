@@ -3,13 +3,17 @@ public class Instrument implements IPlay, ISell{
     String material;
     String colour;
     FamilyType family;
-    InstrumentType instrument;
+    InstrumentType instrumentType;
+    int costPrice;
+    int sellPrice;
 
-    public Instrument(String material, String colour, FamilyType family, InstrumentType instrument) {
+    public Instrument(String material, String colour, FamilyType family, InstrumentType instrumentType, int costPrice, int sellPrice) {
         this.material = material;
         this.colour = colour;
         this.family = family;
-        this.instrument = instrument;
+        this.instrumentType = instrumentType;
+        this.costPrice = costPrice;
+        this.sellPrice = sellPrice;
     }
 
     public String getMaterial() {
@@ -24,13 +28,21 @@ public class Instrument implements IPlay, ISell{
         return family;
     }
 
-    public InstrumentType getInstrument() {
-        return instrument;
+    public InstrumentType getInstrumentType() {
+        return instrumentType;
+    }
+
+    public int getCostPrice(){
+        return this.costPrice;
+    }
+
+    public int getSellPrice(){
+        return this.sellPrice;
     }
 
     @Override
-    public String playMusic(Instrument instrument) {
-        return "I am playing the " + instrument + "!";
+    public String playMusic() {
+        return "I am playing the " + instrumentType.getName() + "!";
     }
 
     @Override
