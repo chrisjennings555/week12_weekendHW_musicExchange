@@ -46,4 +46,5 @@ public class InstrumentTest {
     public void playInstrument(){
         assertEquals("I am playing the Guitar!", instrument.playMusic());
     }
+
 }
