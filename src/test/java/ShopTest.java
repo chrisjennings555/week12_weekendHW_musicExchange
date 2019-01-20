@@ -9,12 +9,14 @@ public class ShopTest {
 
     Shop shop;
     ISell guitar;
+    ISell sundry;
     ArrayList stock;
 
     @Before
     public void before(){
         shop = new Shop(stock);
         guitar = new Instrument("Wood", "Red", FamilyType.STRING, InstrumentType.GUITAR, 10, 20);
+        sundry = new Sundries("Sheet Music", 2, 5);
 
     }
 
@@ -53,6 +55,7 @@ public class ShopTest {
         shop.addItemToStock(guitar);
         shop.addItemToStock(guitar);
         shop.addItemToStock(guitar);
-        assertEquals(30, shop.calculateTotalProfit());
+        shop.addItemToStock(sundry);
+        assertEquals(33, shop.calculateTotalProfit());
     }
 }
